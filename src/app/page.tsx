@@ -56,7 +56,9 @@ export default function HomePage() {
     setCurrentYear(new Date().getFullYear());
     const fetchTestimonials = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/testimonials");
+        const res = await fetch(
+          "https://sea-catering-api.onrender.com/api/testimonials"
+        );
         if (!res.ok) throw new Error("Failed to fetch testimonials");
         const data = await res.json();
         setTestimonials(data);
@@ -88,11 +90,14 @@ export default function HomePage() {
     setIsSubmitting(true);
     setError("");
     try {
-      const res = await fetch("http://localhost:5000/api/testimonials", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        "https://sea-catering-api.onrender.com/api/testimonials",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
       const newTestimonial = await res.json();
       if (!res.ok)
         throw new Error(newTestimonial.msg || "Something went wrong");

@@ -105,9 +105,12 @@ export default function UserDashboardPage() {
         return;
       }
       try {
-        const res = await fetch("http://localhost:5000/api/subscriptions/my", {
-          headers: { "x-auth-token": token },
-        });
+        const res = await fetch(
+          "https://sea-catering-api.onrender.com/api/subscriptions/my",
+          {
+            headers: { "x-auth-token": token },
+          }
+        );
         if (!res.ok) throw new Error("Failed to fetch subscriptions");
         setSubscriptions(await res.json());
       } catch (err: any) {
@@ -141,7 +144,7 @@ export default function UserDashboardPage() {
     }
     try {
       const res = await fetch(
-        `http://localhost:5000/api/subscriptions/${id}/status`,
+        `https://sea-catering-api.onrender.com/api/subscriptions/${id}/status`,
         {
           method: "PATCH",
           headers: {

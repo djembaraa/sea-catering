@@ -53,7 +53,7 @@
 
 //       try {
 //         const res = await fetch(
-//           `http://localhost:5000/api/admin/metrics?startDate=${start}&endDate=${end}`,
+//           `https://sea-catering-api.onrender.com/api/admin/metrics?startDate=${start}&endDate=${end}`,
 //           {
 //             headers: { "x-auth-token": token },
 //           }
@@ -280,10 +280,10 @@ export default function AdminDashboardPage() {
     try {
       // Ambil kedua data (metrics dan subscriptions) secara bersamaan
       const [metricsRes, subsRes] = await Promise.all([
-        fetch("http://localhost:5000/api/admin/metrics", {
+        fetch("https://sea-catering-api.onrender.com/api/admin/metrics", {
           headers: { "x-auth-token": token },
         }),
-        fetch("http://localhost:5000/api/admin/subscriptions", {
+        fetch("https://sea-catering-api.onrender.com/api/admin/subscriptions", {
           headers: { "x-auth-token": token },
         }),
       ]);
@@ -314,7 +314,7 @@ export default function AdminDashboardPage() {
     const token = localStorage.getItem("token");
     try {
       const res = await fetch(
-        `http://localhost:5000/api/admin/subscriptions/${id}`,
+        `https://sea-catering-api.onrender.com/api/admin/subscriptions/${id}`,
         {
           method: "PUT",
           headers: {

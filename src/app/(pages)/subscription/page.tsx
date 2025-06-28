@@ -52,9 +52,12 @@ export default function SubscriptionPage() {
         return;
       }
       try {
-        const res = await fetch("http://localhost:5000/api/auth/me", {
-          headers: { "x-auth-token": token },
-        });
+        const res = await fetch(
+          "https://sea-catering-api.onrender.com/api/auth/me",
+          {
+            headers: { "x-auth-token": token },
+          }
+        );
         if (!res.ok) throw new Error("Session expired, please login again.");
         const userData = await res.json();
         setFormData((prev) => ({ ...prev, name: userData.fullName }));
@@ -110,11 +113,17 @@ export default function SubscriptionPage() {
     const token = localStorage.getItem("token");
     setIsSubmitting(true);
     try {
-      const response = await fetch("http://localhost:5000/api/subscriptions", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "x-auth-token": token! },
-        body: JSON.stringify({ ...formData, totalPrice }),
-      });
+      const response = await fetch(
+        "https://sea-catering-api.onrender.com/api/subscriptions",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-auth-token": token!,
+          },
+          body: JSON.stringify({ ...formData, totalPrice }),
+        }
+      );
       const result = await response.json();
       if (!response.ok)
         throw new Error(result.message || "An unknown error occurred.");

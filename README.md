@@ -84,7 +84,7 @@ _Aplikasi ini terdiri dari dua server yang harus berjalan bersamaan. Buka **dua 
       cd server
       node index.js
       ```
-    - The backend server will be running on `http://localhost:5000`.
+    - The backend server will be running on `https://sea-catering-api.onrender.com`.
 
 2.  **Run the Frontend Server** / **_Jalankan Server Frontend_**
     - In the second terminal: / _Di terminal kedua:_
