@@ -40,7 +40,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="bg-gray-900 text-white min-h-screen flex items-center justify-center">
+    <div className="bg-white text-white min-h-screen flex items-center justify-center">
       <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
         <h1 className="text-3xl font-bold text-center text-cyan-400 mb-6">
           Welcome Back!
