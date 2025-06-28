@@ -6,7 +6,7 @@ const ContactInfo = ({
   title,
   children,
 }: {
-  icon: JSX.Element;
+  icon: React.ReactNode;
   title: string;
   children: React.ReactNode;
 }) => (
